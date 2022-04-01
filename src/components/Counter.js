@@ -1,18 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Action } from '../redux/actions/Action'
-import { INCREMENT } from '../redux/constants'
-import { Reducers } from '../redux/Reducers'
 
 const Counter = () => {
     const state = useSelector(state => state?.reducer?.state)
     const dispatch = useDispatch();
     console.log(state, 'state')
-
-    // const counterHandler = () => {
-    //     dispatch(INCREMENT)
-    //     console.log('counterHandler')
-    // }
 
     return (
         <div className='mb-3'>
