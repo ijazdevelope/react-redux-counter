@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import Login from './components/Login';
+import { Context } from './components/MyContext';
+// import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Signout from './components/Signout';
+import HocDecrement from './hoc/HocDecrement';
+import HocIncrement from './hoc/HocIncrement';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Cards from './components/Cards';
+import Counter from './components/Counter';
 
-function App() {
+const App = () => {
+  const { state } = useContext(Context);
+  // console.log(state, 'state')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      {/* <Router>
+        <switch> */}
+      {/* <Route exact path='/'> */}
+      <Counter />
+      <Cards />
+      <HocDecrement />
+      <HocIncrement />
+      <Signout />
+      <Login />
+      {/* <CreateContext /> */}
+      {/* </Route> */}
+      {/* </switch>
+      </Router> */}
+    </ div>
   );
 }
 
